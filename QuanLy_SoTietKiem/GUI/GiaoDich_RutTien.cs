@@ -217,9 +217,16 @@ namespace QuanLy_SoTietKiem.GUI
 
             if (DialogResult.OK == MessageBox.Show("Xác nhận rút tiền từ sổ tiết kiệm này!", "Thông báo.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
             {
+                int newMaGD = BLL.GiaoDichTietKiemBLL.GetMaxMaGD() + 1; // Lấy mã giao dịch mới
+
                 float laiSuatApDung = LoaiSoTietKiemBLL.GetLaiSuatByMaLoai(maLoai);
 
-                string tongTienNhanText = txtTongTienNhan.Text.Replace(" ₫", "").Trim();
+                // Parse lại các giá trị từ textbox hiển thị để đảm bảo format chuẩn cho báo cáo
+                decimal laiThucTeHienThi = 0;
+                decimal.TryParse(txtLaiThucTe.Text.Replace(" ₫", "").Trim(), NumberStyles.Currency, new CultureInfo("vi-VN"), out laiThucTeHienThi);
+
+                decimal tongTienNhanHienThi = 0;
+                decimal.TryParse(txtTongTienNhan.Text.Replace(" ₫", "").Trim(), NumberStyles.Currency, new CultureInfo("vi-VN"), out tongTienNhanHienThi);
 
                 GiaoDichTietKiemDTO giaoDich = new GiaoDichTietKiemDTO
                 {
@@ -228,7 +235,7 @@ namespace QuanLy_SoTietKiem.GUI
                     SoTien = soTienGiaoDich,
                     NgayGD = dtpNgayGD.Value,
                     LaiSuatApDung = laiSuatApDung,
-                    GhiChu = txtGhiChu.Text.Trim() ?? ghiChu,
+                    GhiChu = txtGhiChu.Text.Trim() + " với Lãi thực tế: " + laiThucTeHienThi + ". Tổng tiền nhận: " + tongTienNhanHienThi,
                     MaNV = taiKhoan.MaNV // Lấy mã nhân viên từ tài khoản đăng nhập
                 };
                 if (BLL.GiaoDichTietKiemBLL.ThemGiaoDich(giaoDich))
@@ -256,7 +263,7 @@ namespace QuanLy_SoTietKiem.GUI
                     {
                         MaTaiKhoan = taiKhoan.MaTaiKhoan,
                         ThoiGian = DateTime.Now,
-                        ThaoTac = ghiChu,
+                        ThaoTac = txtGhiChu.Text.Trim() + " với Lãi thực tế: " + laiThucTeHienThi + ". Tổng tiền nhận: " + tongTienNhanHienThi,
                         DoiTuong = "Sổ tiết kiệm: " + int.Parse(txtMaSo.Text.Trim())
                     };
                     LichSuThaoTacBLL.ThemLichSuThaoTac(lichSu);
@@ -265,10 +272,18 @@ namespace QuanLy_SoTietKiem.GUI
 
                     btnReLoad_Click(sender, e); // Tải lại dữ liệu
                     btnClear_Click(sender, e); // Xóa các trường nhập liệu
+
+                    // Hiển thị báo cáo giao dịch rút tiền
+                    Reports.GiaoDich_RutTien.HoaDon_RutTien frmReport = new Reports.GiaoDich_RutTien.HoaDon_RutTien(
+                        newMaGD,
+                        tongTienNhanHienThi, // Tổng tiền nhận
+                        laiThucTeHienThi // Lãi thực tế
+                    );
+                    frmReport.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Thực hiện giao dịch gửi tiền thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Thực hiện giao dịch rút tiền thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

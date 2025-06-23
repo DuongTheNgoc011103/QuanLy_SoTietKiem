@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 using QuanLy_SoTietKiem.DTO;
 using QuanLy_SoTietKiem.DAL;
+using QuanLy_SoTietKiem.Utils;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace QuanLy_SoTietKiem.BLL
 {
@@ -51,6 +54,12 @@ namespace QuanLy_SoTietKiem.BLL
         public static GiaoDichTietKiemDTO GetGiaoDichByMaGD(int maSo)
         {
             return GiaoDichTietKiemDAL.GetGiaoDichByMaGD(maSo);
+        }
+
+        // Lấy danh sách giao dịch tiết kiệm theo mã giao dịch
+        public static RutTienReportDTO GetRutTienReportDataBasic(int maGD)
+        {
+            return GiaoDichTietKiemDAL.GetRutTienReportDataBasic(maGD);
         }
     }
 }

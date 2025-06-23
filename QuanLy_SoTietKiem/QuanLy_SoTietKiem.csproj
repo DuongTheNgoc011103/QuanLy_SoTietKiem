@@ -92,6 +92,7 @@
     <Compile Include="DTO\LichSuThaoTacDTO.cs" />
     <Compile Include="DTO\LoaiSoTietKiemDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\RutTienReportDTO.cs" />
     <Compile Include="DTO\SoTietKiemDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="GUI\DangNhap.cs">
@@ -192,6 +193,12 @@
     <Compile Include="Reports\GiaoDich_GuiTien\HoaDon_GuiTien.Designer.cs">
       <DependentUpon>HoaDon_GuiTien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\GiaoDich_RutTien\HoaDon_RutTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\GiaoDich_RutTien\HoaDon_RutTien.Designer.cs">
+      <DependentUpon>HoaDon_RutTien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\KhachHang\KhachHangReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +291,10 @@
       <DependentUpon>HoaDon_GuiTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\GiaoDich_GuiTien\HoaDon_GuiTien_Report.rdlc" />
+    <EmbeddedResource Include="Reports\GiaoDich_RutTien\HoaDon_RutTien.resx">
+      <DependentUpon>HoaDon_RutTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GiaoDich_RutTien\HoaDon_RutTien_Report.rdlc" />
     <EmbeddedResource Include="Reports\KhachHang\KhachHangReport.rdlc" />
     <EmbeddedResource Include="Reports\KhachHang\KhachHangReport.resx">
       <DependentUpon>KhachHangReport.cs</DependentUpon>

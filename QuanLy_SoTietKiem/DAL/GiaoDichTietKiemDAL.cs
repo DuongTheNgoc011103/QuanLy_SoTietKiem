@@ -8,6 +8,7 @@ using QuanLy_SoTietKiem.DTO;
 using System.Data;
 using System.Data.SqlClient;
 using QuanLy_SoTietKiem.Utils;
+using QuanLy_SoTietKiem.DAL; // Thêm namespace DAL để sử dụng DatabaseHelper
 
 namespace QuanLy_SoTietKiem.DAL
 {
@@ -164,6 +165,66 @@ namespace QuanLy_SoTietKiem.DAL
 
                 TenLoai = row["TenLoai"].ToString(),
             };
+        }
+
+        // Lấy dữ liệu báo cáo rút tiền tiết kiệm cơ bản (không bao gồm các trường tính toán)
+        public static RutTienReportDTO GetRutTienReportDataBasic(int maGD) // Đổi tên hàm để rõ mục đích
+        {
+            RutTienReportDTO reportData = null;
+
+            string query = @"
+            SELECT
+                GD.MaGD, GD.NgayGD, GD.LoaiGiaoDich, GD.SoTien AS SoTienGiaoDich, GD.LaiSuatApDung, GD.GhiChu AS GhiChuGD,
+                NV.HoTen AS TenNhanVien,
+                STK.MaSo AS MaSoSTK, STK.NgayMo AS NgayMoSTK, STK.KyHan AS KyHanSTK, STK.SoTienGoc AS SoTienGocSTK,
+                KH.HoTen AS HoTenKH, KH.CMND_CCCD, KH.DiaChi AS DiaChiKH, KH.DienThoai AS DienThoaiKH,
+                LSTK.TenLoai AS TenLoaiSo
+            FROM
+                GiaoDichTietKiem AS GD
+            JOIN NhanVien AS NV ON GD.MaNV = NV.MaNV
+            JOIN SoTietKiem AS STK ON GD.MaSo = STK.MaSo
+            JOIN KhachHang AS KH ON STK.MaKH = KH.MaKH
+            JOIN LoaiSoTietKiem AS LSTK ON STK.MaLoai = LSTK.MaLoai
+            WHERE
+                GD.MaGD = @MaGD";
+
+            SqlParameter[] parameters = { new SqlParameter("@MaGD", maGD) };
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query, parameters);
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                reportData = new RutTienReportDTO
+                {
+                    MaGD = Convert.ToInt32(row["MaGD"]),
+                    NgayGD = Convert.ToDateTime(row["NgayGD"]),
+                    LoaiGiaoDich = row["LoaiGiaoDich"].ToString(),
+                    PhuongThucRut = row["GhiChuGD"].ToString().Contains("toàn bộ") ? "Rút toàn bộ" : "Rút một phần",
+                    HoTen_NV = row["TenNhanVien"].ToString(),
+
+                    HoTen_KH = row["HoTenKH"].ToString(),
+                    CMND_CCCD = row["CMND_CCCD"].ToString(),
+                    DiaChi_KH = row["DiaChiKH"] is DBNull ? string.Empty : row["DiaChiKH"].ToString(),
+
+                    MaSo = Convert.ToInt32(row["MaSoSTK"]),
+                    TenLoai = row["TenLoaiSo"].ToString(),
+                    NgayMo = Convert.ToDateTime(row["NgayMoSTK"]),
+                    KyHan = row["KyHanSTK"] is DBNull ? (int?)null : Convert.ToInt32(row["KyHanSTK"]),
+                    NgayDaoHan = (row["KyHanSTK"] is DBNull || Convert.ToInt32(row["KyHanSTK"]) == 0) ? Convert.ToDateTime(row["NgayMoSTK"]).Date : Convert.ToDateTime(row["NgayMoSTK"]).AddMonths(Convert.ToInt32(row["KyHanSTK"])).Date,
+                    SoTienGoc = Convert.ToDecimal(row["SoTienGocSTK"]),
+
+                    GhiChuGiaoDich = row["GhiChuGD"].ToString(),
+
+                    // Các trường này sẽ được truyền từ GUI, không lấy từ DB ở đây
+                    SoTienYeuCauRut = 0, // Giá trị mặc định
+                    LaiThucTe = 0,
+                    PhiPhatTruocHan = 0,
+                    TongTienThucNhan = 0,
+                    TongTienBangChu = ""
+                };
+            }
+            return reportData;
         }
     }
 }
