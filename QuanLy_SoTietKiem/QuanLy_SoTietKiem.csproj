@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F56D6543-1667-41B2-9E8B-7CD0C265A080}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLy_SoTietKiem</RootNamespace>
+    <AssemblyName>QuanLy_SoTietKiem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ChiNhanhBLL.cs" />
+    <Compile Include="BLL\GiaoDichTietKiemBLL.cs" />
+    <Compile Include="BLL\KhachHangBLL.cs" />
+    <Compile Include="BLL\LichSuThaoTacBLL.cs" />
+    <Compile Include="BLL\LoaiSoTietKiemBLL.cs" />
+    <Compile Include="BLL\NhanVienBLL.cs" />
+    <Compile Include="BLL\SoTietKiemBLL.cs" />
+    <Compile Include="BLL\TaiKhoanBLL.cs" />
+    <Compile Include="DAL\ChiNhanhDAL.cs" />
+    <Compile Include="DAL\DatabaseHelper.cs" />
+    <Compile Include="DAL\GiaoDichTietKiemDAL.cs" />
+    <Compile Include="DAL\KhachHangDAL.cs" />
+    <Compile Include="DAL\LichSuThaoTacDAL.cs" />
+    <Compile Include="DAL\LoaiSoTietKiemDAL.cs" />
+    <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\SoTietKiemDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDAL.cs" />
+    <Compile Include="DTO\ChiNhanhDTO.cs" />
+    <Compile Include="DTO\GiaoDichTietKiemDTO.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\LichSuThaoTacDTO.cs" />
+    <Compile Include="DTO\LoaiSoTietKiemDTO.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\SoTietKiemDTO.cs" />
+    <Compile Include="DTO\TaiKhoanDTO.cs" />
+    <Compile Include="GUI\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDich_GuiTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDich_GuiTien.Designer.cs">
+      <DependentUpon>GiaoDich_GuiTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoDich_RutTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoDich_RutTien.Designer.cs">
+      <DependentUpon>GiaoDich_RutTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LichSu_ThaoTac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LichSu_ThaoTac.Designer.cs">
+      <DependentUpon>LichSu_ThaoTac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PhanLoai_KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhanLoai_KhachHang.Designer.cs">
+      <DependentUpon>PhanLoai_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLy_ChiNhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLy_ChiNhanh.Designer.cs">
+      <DependentUpon>QuanLy_ChiNhanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLy_DSKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLy_DSKhachHang.Designer.cs">
+      <DependentUpon>QuanLy_DSKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLy_LoaiSoTietKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLy_LoaiSoTietKiem.Designer.cs">
+      <DependentUpon>QuanLy_LoaiSoTietKiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLy_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLy_NhanVien.Designer.cs">
+      <DependentUpon>QuanLy_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLy_SoTietKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLy_SoTietKiem.Designer.cs">
+      <DependentUpon>QuanLy_SoTietKiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLy_TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLy_TaiKhoan.Designer.cs">
+      <DependentUpon>QuanLy_TaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuenMatKhau.Designer.cs">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TrangChu.Designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ChiNhanh\ChiNhanhReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ChiNhanh\ChiNhanhReport.Designer.cs">
+      <DependentUpon>ChiNhanhReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GiaoDich_GuiTien\HoaDon_GuiTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\GiaoDich_GuiTien\HoaDon_GuiTien.Designer.cs">
+      <DependentUpon>HoaDon_GuiTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\KhachHang\KhachHangReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\KhachHang\KhachHangReport.Designer.cs">
+      <DependentUpon>KhachHangReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LoaiSoTietKiem\LoaiSoTietKiemReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\LoaiSoTietKiem\LoaiSoTietKiemReport.Designer.cs">
+      <DependentUpon>LoaiSoTietKiemReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NhanVien\NhanVienReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\NhanVien\NhanVienReport.Designer.cs">
+      <DependentUpon>NhanVienReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\QuanLy_STK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLy_STK.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SoTietKiem\SoTietKiemReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\SoTietKiem\SoTietKiemReport.Designer.cs">
+      <DependentUpon>SoTietKiemReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Utils\EmailHelper.cs" />
+    <Compile Include="Utils\MaHoa.cs" />
+    <Compile Include="Utils\TienHelper.cs" />
+    <EmbeddedResource Include="GUI\DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDich_GuiTien.resx">
+      <DependentUpon>GiaoDich_GuiTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoDich_RutTien.resx">
+      <DependentUpon>GiaoDich_RutTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LichSu_ThaoTac.resx">
+      <DependentUpon>LichSu_ThaoTac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhanLoai_KhachHang.resx">
+      <DependentUpon>PhanLoai_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLy_ChiNhanh.resx">
+      <DependentUpon>QuanLy_ChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLy_DSKhachHang.resx">
+      <DependentUpon>QuanLy_DSKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLy_LoaiSoTietKiem.resx">
+      <DependentUpon>QuanLy_LoaiSoTietKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLy_NhanVien.resx">
+      <DependentUpon>QuanLy_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLy_SoTietKiem.resx">
+      <DependentUpon>QuanLy_SoTietKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLy_TaiKhoan.resx">
+      <DependentUpon>QuanLy_TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuenMatKhau.resx">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reports\ChiNhanh\ChiNhanhReport.rdlc" />
+    <EmbeddedResource Include="Reports\ChiNhanh\ChiNhanhReport.resx">
+      <DependentUpon>ChiNhanhReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GiaoDich_GuiTien\HoaDon_GuiTien.resx">
+      <DependentUpon>HoaDon_GuiTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GiaoDich_GuiTien\HoaDon_GuiTien_Report.rdlc" />
+    <EmbeddedResource Include="Reports\KhachHang\KhachHangReport.rdlc" />
+    <EmbeddedResource Include="Reports\KhachHang\KhachHangReport.resx">
+      <DependentUpon>KhachHangReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LoaiSoTietKiem\LoaiSoTietKiemReport.rdlc" />
+    <EmbeddedResource Include="Reports\LoaiSoTietKiem\LoaiSoTietKiemReport.resx">
+      <DependentUpon>LoaiSoTietKiemReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NhanVien\NhanVienReport.rdlc" />
+    <EmbeddedResource Include="Reports\NhanVien\NhanVienReport.resx">
+      <DependentUpon>NhanVienReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SoTietKiem\SoTietKiemReport.rdlc" />
+    <EmbeddedResource Include="Reports\SoTietKiem\SoTietKiemReport.resx">
+      <DependentUpon>SoTietKiemReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reports\QuanLy_STK.xsc">
+      <DependentUpon>QuanLy_STK.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\QuanLy_STK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLy_STK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\QuanLy_STK.xss">
+      <DependentUpon>QuanLy_STK.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

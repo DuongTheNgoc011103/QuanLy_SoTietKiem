@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\QuanLy_SoTietKiem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\lichsu_thaotac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\lichsu_thaotac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\lichsu_thaotac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\lichsu_thaotac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\giaodich_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\giaodich_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\giaodich_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\giaodich_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\giaodich_guitien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\giaodich_guitien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\bll\\sotietkiembll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\bll\\sotietkiembll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 40,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 232,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GiaoDich_GuiTien.cs",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_GuiTien.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\GiaoDich_GuiTien.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_GuiTien.cs",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\GiaoDich_GuiTien.cs",
+              "ViewState": "AgIAAHgBAAAAAAAAAAAtwIcBAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T07:27:34.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SoTietKiemBLL.cs",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\BLL\\SoTietKiemBLL.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\BLL\\SoTietKiemBLL.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\BLL\\SoTietKiemBLL.cs",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\BLL\\SoTietKiemBLL.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAIA5wHIAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T09:10:55.462Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 308,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LichSu_ThaoTac.cs",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\LichSu_ThaoTac.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\LichSu_ThaoTac.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\LichSu_ThaoTac.cs",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\LichSu_ThaoTac.cs",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAgwM0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T10:15:18.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LichSu_ThaoTac.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\LichSu_ThaoTac.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\LichSu_ThaoTac.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\LichSu_ThaoTac.cs [Design]",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\LichSu_ThaoTac.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T10:15:16.039Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GiaoDich_RutTien.cs",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAgwOQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T07:20:00.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GiaoDich_RutTien.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs [Design]",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T06:56:41.066Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
