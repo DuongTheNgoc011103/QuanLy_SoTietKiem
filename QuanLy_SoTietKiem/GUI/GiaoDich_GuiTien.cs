@@ -419,5 +419,11 @@ namespace QuanLy_SoTietKiem.GUI
                 dgvDSGiaoDichGuiTienTietKiem.DataSource = searchResults;
             }
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Reports.GiaoDichTietKiem.GiaoDichTietKiem frm = new Reports.GiaoDichTietKiem.GiaoDichTietKiem();
+            frm.ShowDialog();
+        }
     }
 }

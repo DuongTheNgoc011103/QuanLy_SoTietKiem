@@ -117,6 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_Notification.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        rwAAAK8BK7AVuQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAALZSURBVEhL7ZY/
+        TBNRHMdPCjViYkJIFKEMbpJeS7CDi6hBRKGm70ro5mSwV8A7MIwMNlFR7hWiMcS0EF1IqF00yqAmJvJH
+        IaF6sjhQDYqAiLqgJKQKX9OrlPZdaYmz3+Sz3O/d55t375I7jksKlNYzoPI8ei6WJF/XZoMmJ4KmOfQa
+        fqN/93XdvLHeBJEswO2wszMtUKQaUHkVinQfXm9Oysxvy0PQtIygCbjFAb071uEvzk9Z4/XmQBQeQCSr
+        OE+qk2cclOYiUHkJVHoMr9cIKjuhSL7EPGQq0eShUiBgjJfc2XM4MReFbrgFAS6XEaLwFCL5gua6os0C
+        nxSEIi+CevbC13oKVI5Ckfu02ZT1AML8AF6ZAZUHhq3AiBUYs8xgovxIvMDRD5FE4RZq0OjYpxW4yWBc
+        3tVWBiqvgUoiOlsKQeXPf3eSi9fmBqj8iibeIFaQzEtLD7zHcyGSJ9oZtDgLIZJmiGQNHifPQZF7NGns
+        0SjSVVD5B7ouFGPKXAWV/5UiT1cQY4JvxzlHMUTyE25yBVLtTm0XotDNgUoRUCmAkMsAKn+DIt9A2JYH
+        lZ/WybcqGLVGEbblw0NuwuNYgstlgIf0wU0isR34obQdgk+2gcqAIlVCtdTpxJkKYozzlyA6jkIkQJNg
+        0xAd/s2DvtZUACp3aK+bynfqxNkKXljGtXs9pANN9oKEOF3whu/XibMXRFjPloFqvqsTZy94z3q2zP+C
+        rIHKD+nE2QrGrF9ZT9ogXLYfKr+sE2crGLGuY7K8gvXpApV/pJNup0DbhWWW9aUEMycEvDuGjExXZeZt
+        ZRfrTQSL9Q+x4kZGFk5mZvb0d9abCJYaJnVCFlbIMle7wnoTwaJzQCdkYYUsH2s/sN6UYM5uxyf72RSG
+        KyJ4ZoHG84NxRsxRzFTfZvCyvm0F90rbtW/yxkc/RiB/iF33z0GIM2Cw5DKCpnnttyWwaxQhzsiuS5c/
+        8OZA9vEC6MkAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="MaSoTK.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -144,7 +164,6 @@
   <metadata name="TrangThai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnReLoad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

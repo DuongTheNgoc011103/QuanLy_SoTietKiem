@@ -61,5 +61,11 @@ namespace QuanLy_SoTietKiem.BLL
         {
             return GiaoDichTietKiemDAL.GetRutTienReportDataBasic(maGD);
         }
+
+        // Giao dịch theo ngày Report
+        public static List<GiaoDichTheoNgayReportDTO> GetGiaoDichTheoNgay(DateTime tuNgay, DateTime denNgay)
+        {
+            return GiaoDichTietKiemDAL.GetGiaoDichTheoNgay(tuNgay, denNgay);
+        }
     }
 }

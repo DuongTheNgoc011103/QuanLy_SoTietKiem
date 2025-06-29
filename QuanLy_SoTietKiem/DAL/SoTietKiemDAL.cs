@@ -479,5 +479,48 @@ namespace QuanLy_SoTietKiem.DAL
 
             return soTietKiem;
         }
+
+        // Lấy báo cáo số tiết kiệm theo chi nhánh
+        public static List<SoTheoChiNhanhReportDTO> GetSoTheoChiNhanh()
+        {
+            List<SoTheoChiNhanhReportDTO> result = new List<SoTheoChiNhanhReportDTO>();
+            string query = @"
+                SELECT
+                    CN.MaCN,
+                    CN.TenChiNhanh,
+                    CN.NguoiQuanLy,
+                    COUNT(DISTINCT STK.MaSo) AS TongSoSo, -- Đếm số sổ duy nhất
+                    ISNULL(SUM(STK.SoTienGoc), 0) AS TongSoTienGoc -- Tổng tiền gốc của các sổ đó
+                FROM ChiNhanh AS CN
+                LEFT JOIN NhanVien AS NV ON CN.MaCN = NV.MaCN
+                LEFT JOIN GiaoDichTietKiem AS GD ON NV.MaNV = GD.MaNV
+                    AND GD.LoaiGiaoDich = N'Mở sổ tiết kiệm'
+                    -- Đảm bảo chỉ lấy giao dịch mở sổ ban đầu (MaGD nhỏ nhất cho sổ đó)
+                    AND GD.MaGD = (
+                        SELECT MIN(GD_Sub.MaGD)
+                        FROM GiaoDichTietKiem AS GD_Sub
+                        WHERE GD_Sub.MaSo = GD.MaSo
+                          AND GD_Sub.LoaiGiaoDich = N'Mở sổ tiết kiệm'
+                    )
+                LEFT JOIN SoTietKiem AS STK ON GD.MaSo = STK.MaSo AND STK.TrangThai = N'Đang hoạt động' -- Chỉ tính các sổ đang hoạt động
+                GROUP BY CN.MaCN, CN.TenChiNhanh, CN.NguoiQuanLy
+                ORDER BY CN.MaCN ASC;
+            ";
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query, null); // Không có tham số
+
+            foreach (DataRow row in dt.Rows)
+            {
+                result.Add(new SoTheoChiNhanhReportDTO
+                {
+                    MaCN = Convert.ToInt32(row["MaCN"]),
+                    TenChiNhanh = row["TenChiNhanh"].ToString(),
+                    NguoiQuanLy = row["NguoiQuanLy"] is DBNull ? string.Empty : row["NguoiQuanLy"].ToString(),
+                    TongSoSo = Convert.ToInt32(row["TongSoSo"]),
+                    TongSoTienGoc = Convert.ToDecimal(row["TongSoTienGoc"])
+                });
+            }
+            return result;
+        }
     }
 }

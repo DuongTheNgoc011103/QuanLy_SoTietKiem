@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\QuanLy_SoTietKiem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\reports\\giaodich_ruttien\\hoadon_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\reports\\giaodich_ruttien\\hoadon_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\thongke_tonghop_tiengui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\thongke_tonghop_tiengui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\giaodich_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\giaodich_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\thongke_so_theochinhanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\thongke_so_theochinhanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\reports\\giaodich_ruttien\\hoadon_ruttien_report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\reports\\giaodich_ruttien\\hoadon_ruttien_report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\giaodich_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\giaodich_ruttien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\reports\\giaodich_guitien\\hoadon_guitien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\reports\\giaodich_guitien\\hoadon_guitien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|d:\\quanly_sotietkiem\\quanly_sotietkiem\\gui\\thongke_giaodich_theongay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F56D6543-1667-41B2-9E8B-7CD0C265A080}|QuanLy_SoTietKiem\\QuanLy_SoTietKiem.csproj|solutionrelative:quanly_sotietkiem\\gui\\thongke_giaodich_theongay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,80 +47,53 @@
           ]
         },
         {
-          "DockedWidth": 254,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 840,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GiaoDich_RutTien.cs",
-              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
-              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
-              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
-              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
-              "ViewState": "AgIAAA0CAAAAAAAAAAAUwCECAAB6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T17:22:23.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HoaDon_GuiTien.cs",
-              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\Reports\\GiaoDich_GuiTien\\HoaDon_GuiTien.cs",
-              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\Reports\\GiaoDich_GuiTien\\HoaDon_GuiTien.cs",
-              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\Reports\\GiaoDich_GuiTien\\HoaDon_GuiTien.cs",
-              "RelativeToolTip": "QuanLy_SoTietKiem\\Reports\\GiaoDich_GuiTien\\HoaDon_GuiTien.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T18:16:17.041Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 492,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 1153,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GiaoDich_RutTien.cs [Design]",
-              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
-              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs",
-              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs [Design]",
-              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\GiaoDich_RutTien.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "ThongKe_GiaoDich_TheoNgay.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\ThongKe_GiaoDich_TheoNgay.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\ThongKe_GiaoDich_TheoNgay.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\ThongKe_GiaoDich_TheoNgay.cs [Design]",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\ThongKe_GiaoDich_TheoNgay.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T17:50:57.55Z",
+              "WhenOpened": "2025-06-29T13:52:37.422Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThongKe_So_TheoChiNhanh.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\ThongKe_So_TheoChiNhanh.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\ThongKe_So_TheoChiNhanh.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\ThongKe_So_TheoChiNhanh.cs [Design]",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\ThongKe_So_TheoChiNhanh.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T13:52:03.771Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HoaDon_RutTien.cs",
-              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\Reports\\GiaoDich_RutTien\\HoaDon_RutTien.cs",
-              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\Reports\\GiaoDich_RutTien\\HoaDon_RutTien.cs",
-              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\Reports\\GiaoDich_RutTien\\HoaDon_RutTien.cs",
-              "RelativeToolTip": "QuanLy_SoTietKiem\\Reports\\GiaoDich_RutTien\\HoaDon_RutTien.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAqwDMAAABIAAAAAAAAAA==",
+              "Title": "ThongKe_TongHop_TienGui.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\ThongKe_TongHop_TienGui.cs",
+              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\GUI\\ThongKe_TongHop_TienGui.cs",
+              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\GUI\\ThongKe_TongHop_TienGui.cs [Design]",
+              "RelativeToolTip": "QuanLy_SoTietKiem\\GUI\\ThongKe_TongHop_TienGui.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T16:24:51.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HoaDon_RutTien_Report.rdlc [Design]",
-              "DocumentMoniker": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\Reports\\GiaoDich_RutTien\\HoaDon_RutTien_Report.rdlc",
-              "RelativeDocumentMoniker": "QuanLy_SoTietKiem\\Reports\\GiaoDich_RutTien\\HoaDon_RutTien_Report.rdlc",
-              "ToolTip": "D:\\QuanLy_SoTietKiem\\QuanLy_SoTietKiem\\Reports\\GiaoDich_RutTien\\HoaDon_RutTien_Report.rdlc [Design]",
-              "RelativeToolTip": "QuanLy_SoTietKiem\\Reports\\GiaoDich_RutTien\\HoaDon_RutTien_Report.rdlc [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-06-23T16:04:41.095Z",
+              "WhenOpened": "2025-06-29T13:51:36.307Z",
               "EditorCaption": " [Design]"
             }
           ]

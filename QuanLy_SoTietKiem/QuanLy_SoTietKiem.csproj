@@ -87,12 +87,14 @@
     <Compile Include="DAL\SoTietKiemDAL.cs" />
     <Compile Include="DAL\TaiKhoanDAL.cs" />
     <Compile Include="DTO\ChiNhanhDTO.cs" />
+    <Compile Include="DTO\GiaoDichTheoNgayReportDTO.cs" />
     <Compile Include="DTO\GiaoDichTietKiemDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LichSuThaoTacDTO.cs" />
     <Compile Include="DTO\LoaiSoTietKiemDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\RutTienReportDTO.cs" />
+    <Compile Include="DTO\SoTheoChiNhanhReportDTO.cs" />
     <Compile Include="DTO\SoTietKiemDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="GUI\DangNhap.cs">
@@ -118,6 +120,12 @@
     </Compile>
     <Compile Include="GUI\GiaoDich_RutTien.Designer.cs">
       <DependentUpon>GiaoDich_RutTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\HuongDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HuongDan.Designer.cs">
+      <DependentUpon>HuongDan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LichSu_ThaoTac.cs">
       <SubType>Form</SubType>
@@ -173,6 +181,24 @@
     <Compile Include="GUI\QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThongKe_GiaoDich_TheoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongKe_GiaoDich_TheoNgay.Designer.cs">
+      <DependentUpon>ThongKe_GiaoDich_TheoNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThongKe_So_TheoChiNhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongKe_So_TheoChiNhanh.Designer.cs">
+      <DependentUpon>ThongKe_So_TheoChiNhanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThongKe_TongHop_TienGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongKe_TongHop_TienGui.Designer.cs">
+      <DependentUpon>ThongKe_TongHop_TienGui.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +212,12 @@
     </Compile>
     <Compile Include="Reports\ChiNhanh\ChiNhanhReport.Designer.cs">
       <DependentUpon>ChiNhanhReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GiaoDichTietKiem\GiaoDichTietKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\GiaoDichTietKiem\GiaoDichTietKiem.Designer.cs">
+      <DependentUpon>GiaoDichTietKiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\GiaoDich_GuiTien\HoaDon_GuiTien.cs">
       <SubType>Form</SubType>
@@ -244,6 +276,9 @@
     <EmbeddedResource Include="GUI\GiaoDich_RutTien.resx">
       <DependentUpon>GiaoDich_RutTien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HuongDan.resx">
+      <DependentUpon>HuongDan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\LichSu_ThaoTac.resx">
       <DependentUpon>LichSu_ThaoTac.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +306,15 @@
     <EmbeddedResource Include="GUI\QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongKe_GiaoDich_TheoNgay.resx">
+      <DependentUpon>ThongKe_GiaoDich_TheoNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongKe_So_TheoChiNhanh.resx">
+      <DependentUpon>ThongKe_So_TheoChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongKe_TongHop_TienGui.resx">
+      <DependentUpon>ThongKe_TongHop_TienGui.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +331,11 @@
     <EmbeddedResource Include="Reports\ChiNhanh\ChiNhanhReport.resx">
       <DependentUpon>ChiNhanhReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ThongKe_BaoCao\GiaoDichTheoNgayReport.rdlc" />
+    <EmbeddedResource Include="Reports\GiaoDichTietKiem\GiaoDichTietKiem.resx">
+      <DependentUpon>GiaoDichTietKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GiaoDichTietKiem\GiaoDichTietKiem_Report.rdlc" />
     <EmbeddedResource Include="Reports\GiaoDich_GuiTien\HoaDon_GuiTien.resx">
       <DependentUpon>HoaDon_GuiTien.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,7 +360,10 @@
     <EmbeddedResource Include="Reports\SoTietKiem\SoTietKiemReport.resx">
       <DependentUpon>SoTietKiemReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ThongKe_BaoCao\SoTheoChiNhanhReport.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QuanLy_SoTietKiem.DTO.GiaoDichTheoNgayReportDTO.datasource" />
+    <None Include="Properties\DataSources\QuanLy_SoTietKiem.DTO.SoTheoChiNhanhReportDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

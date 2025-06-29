@@ -937,7 +937,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!LaiSuatApDung.Value</Value>
+                    <Value>=Fields!LaiSuatApDung.Value.ToString() + "%"</Value>
                     <Style>
                       <FontFamily>Tahoma</FontFamily>
                       <FontSize>12pt</FontSize>

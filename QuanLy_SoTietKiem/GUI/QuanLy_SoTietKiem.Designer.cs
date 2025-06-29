@@ -32,9 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLy_SoTietKiem));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLy_SoTietKiem));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -121,6 +121,7 @@
             this.btnNext_KH = new System.Windows.Forms.Button();
             this.btnPrev_KH = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.btn_Notification = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -149,6 +150,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_Notification);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -1133,6 +1135,22 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Tổng số Khách Hàng: ";
             // 
+            // btn_Notification
+            // 
+            this.btn_Notification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Notification.BackColor = System.Drawing.Color.OrangeRed;
+            this.btn_Notification.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Notification.ForeColor = System.Drawing.Color.White;
+            this.btn_Notification.Image = ((System.Drawing.Image)(resources.GetObject("btn_Notification.Image")));
+            this.btn_Notification.Location = new System.Drawing.Point(1689, 0);
+            this.btn_Notification.Name = "btn_Notification";
+            this.btn_Notification.Size = new System.Drawing.Size(235, 52);
+            this.btn_Notification.TabIndex = 1;
+            this.btn_Notification.Text = "Thông báo";
+            this.btn_Notification.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Notification.UseVisualStyleBackColor = false;
+            this.btn_Notification.Click += new System.EventHandler(this.btn_Notification_Click);
+            // 
             // QuanLy_SoTietKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1265,5 +1283,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen_KH;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND_CCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
+        private System.Windows.Forms.Button btn_Notification;
     }
 }

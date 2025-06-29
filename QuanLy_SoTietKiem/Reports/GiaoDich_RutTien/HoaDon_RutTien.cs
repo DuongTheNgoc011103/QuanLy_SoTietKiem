@@ -43,23 +43,23 @@ namespace QuanLy_SoTietKiem.Reports.GiaoDich_RutTien
 
             string soTienBangChu = TienHelper.DocTienBangChu(chiTiet.SoTien);
 
-            DateTime ngayRutTien = chiTiet.NgayGD.HasValue ? chiTiet.NgayGD.Value : DateTime.Now;
-            SoTietKiemDTO soKetQua = SoTietKiemBLL.TinhLaiDuKien(chiTiet.MaSo, ngayRutTien, chiTiet.SoTien);
+            //DateTime ngayRutTien = chiTiet.NgayGD.HasValue ? chiTiet.NgayGD.Value : DateTime.Now;
+            //SoTietKiemDTO soKetQua = SoTietKiemBLL.TinhLaiDuKien(chiTiet.MaSo, ngayRutTien, chiTiet.SoTien);
 
-            laiThucTe = Convert.ToDecimal(soKetQua.LaiDuKien);
-            string laiThucTeString = laiThucTe.ToString("N0", new CultureInfo("vi-VN"));
+            //laiThucTe = Convert.ToDecimal(soKetQua.LaiDuKien);
+            //string laiThucTeString = laiThucTe.ToString("N0", new CultureInfo("vi-VN"));
 
-            tongTienNhan = Convert.ToDecimal(soKetQua.TongSoTienCuoiKy);
-            string tongTienNhanString = tongTienNhan.ToString("N0", new CultureInfo("vi-VN"));
+            //tongTienNhan = Convert.ToDecimal(soKetQua.TongSoTienCuoiKy);
+            //string tongTienNhanString = tongTienNhan.ToString("N0", new CultureInfo("vi-VN"));
 
             ReportDataSource rds = new ReportDataSource("DataSET_GiaoDich_RutTien", ds);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "QuanLy_SoTietKiem.Reports.GiaoDich_RutTien.HoaDon_RutTien_Report.rdlc";
 
             ReportParameter[] reportParams = new ReportParameter[]
             {
-                new ReportParameter("LaiThucTe", laiThucTeString),
+                new ReportParameter("LaiThucTe", this.laiThucTe.ToString()),
                 new ReportParameter("SoTienBangChu", soTienBangChu),
-                new ReportParameter("TongSoTienNhan", tongTienNhanString)
+                new ReportParameter("TongSoTienNhan", this.tongTienNhan.ToString())
             };
 
             this.reportViewer.LocalReport.SetParameters(reportParams);

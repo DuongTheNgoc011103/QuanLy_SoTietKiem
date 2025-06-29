@@ -144,5 +144,11 @@ namespace QuanLy_SoTietKiem.BLL
         {
             return SoTietKiemDAL.CountSoTietKiemByMaLoai(maLoai) > 0;
         }
+
+        // Lấy danh sách sổ tiết kiệm theo chi nhánh
+        public static List<SoTheoChiNhanhReportDTO> GetSoTheoChiNhanh()
+        {
+            return SoTietKiemDAL.GetSoTheoChiNhanh();
+        }
     }
 }

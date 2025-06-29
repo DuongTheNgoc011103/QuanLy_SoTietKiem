@@ -17,8 +17,7 @@ namespace QuanLy_SoTietKiem.GUI
 {
     public partial class TrangChu: Form
     {
-        private System.Windows.Forms.Timer daoHanTimer;
-
+        
         private Form currentFormChild;
         private TaiKhoanDTO taiKhoan;
         public TrangChu(TaiKhoanDTO taiKhoanDTO)
@@ -27,77 +26,7 @@ namespace QuanLy_SoTietKiem.GUI
             this.taiKhoan = taiKhoanDTO;
             HienThiThongTinNguoiDung();
 
-            SetupDaoHanTimer(); // Gọi khi khởi tạo form
-        }
-
-        private void SetupDaoHanTimer()
-        {
-            daoHanTimer = new System.Windows.Forms.Timer();
-            daoHanTimer.Interval = 60 * 60 * 1000; // Kiểm tra mỗi 1 giờ (có thể điều chỉnh)
-                                                   // daoHanTimer.Interval = 10 * 1000; // Để test, chạy mỗi 10 giây
-            daoHanTimer.Tick += DaoHanTimer_Tick;
-            daoHanTimer.Start();
-
-            // Chạy kiểm tra ngay khi khởi động
-            DaoHanTimer_Tick(null, null);
-        }
-
-        private void DaoHanTimer_Tick(object sender, EventArgs e)
-        {
-            // Kiểm tra và cập nhật trạng thái sổ đáo hạn
-            List<int> updatedSoMos = SoTietKiemBLL.CapNhatSoDaoHan();
-
-            if (updatedSoMos.Count > 0)
-            {
-                //MessageBox.Show($"Đã có {updatedSoMos.Count} sổ tiết kiệm đáo hạn và được cập nhật trạng thái.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Gửi email cho các sổ vừa đáo hạn
-                foreach (int maSo in updatedSoMos)
-                {
-                    SoTietKiemDTO soChiTiet = SoTietKiemBLL.GetSoTietKiemChiTiet(maSo);
-                    if (soChiTiet != null && !string.IsNullOrEmpty(KhachHangBLL.GetEmailByMaKH(soChiTiet.MaKH)))
-                    {
-                        // Gọi hàm gửi mail
-                        SendMaturityReminderEmail(soChiTiet);
-                    }
-                }
-            }
-        }
-
-        // Trong TrangChu.cs (tiếp nối phần DaoHanTimer_Tick)
-
-        private void SendMaturityReminderEmail(SoTietKiemDTO soTietKiem)
-        {
-            string subject = $"THÔNG BÁO: Sổ tiết kiệm của quý khách đã ĐÁO HẠN - Mã sổ: {soTietKiem.MaSo}";
-
-            string tenLoai = LoaiSoTietKiemBLL.GetTenLoaiByMaLoai(soTietKiem.MaLoai);
-            string email = KhachHangBLL.GetEmailByMaKH(soTietKiem.MaKH);
-
-            // Tạo nội dung email HTML
-            StringBuilder bodyBuilder = new StringBuilder();
-            bodyBuilder.AppendLine($"<p>Kính gửi Khách hàng: <strong>{soTietKiem.HoTen}</strong>,</p>");
-            bodyBuilder.AppendLine("<p>Chúng tôi xin thông báo sổ tiết kiệm của quý khách với các thông tin sau đã chính thức đáo hạn:</p>");
-            bodyBuilder.AppendLine("<ul>");
-            bodyBuilder.AppendLine($"<li><strong>Mã sổ:</strong> {soTietKiem.MaSo}</li>");
-            bodyBuilder.AppendLine($"<li><strong>Loại sổ:</strong> {tenLoai}</li>");
-            bodyBuilder.AppendLine($"<li><strong>Ngày mở:</strong> {soTietKiem.NgayMo:dd/MM/yyyy}</li>");
-            bodyBuilder.AppendLine($"<li><strong>Kỳ hạn:</strong> {soTietKiem.KyHan} tháng</li>");
-            bodyBuilder.AppendLine($"<li><strong>Ngày đáo hạn:</strong> {soTietKiem.NgayDaoHan:dd/MM/yyyy}</li>");
-            bodyBuilder.AppendLine($"<li><strong>Số tiền gốc:</strong> {string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00} ₫", soTietKiem.SoTienGoc)}</li>");
-            bodyBuilder.AppendLine("</ul>");
-            bodyBuilder.AppendLine("<p>Để được tư vấn về các lựa chọn tiếp theo (tái tục, tất toán, gửi mới), quý khách vui lòng liên hệ với chúng tôi tại chi nhánh gần nhất hoặc qua điện thoại.</p>");
-            bodyBuilder.AppendLine("<p>Trân trọng cảm ơn!</p>");
-            bodyBuilder.AppendLine("<p><strong>Hệ thống Quản lý Sổ Tiết Kiệm</strong></p>");
-
-            if (EmailHelper.SendEmail(email, subject, bodyBuilder.ToString()))
-            {
-                Console.WriteLine($"Đã gửi email nhắc nhở đáo hạn cho khách hàng {soTietKiem.HoTen} ({email}) về sổ {soTietKiem.MaSo}.");
-            }
-            else
-            {
-                Console.WriteLine($"Không thể gửi email nhắc nhở đáo hạn cho khách hàng {soTietKiem.HoTen} ({email}) về sổ {soTietKiem.MaSo}.");
-            }
-        }
+        }        
 
         private void OpenChildForm(Form childForm)
         {
@@ -216,12 +145,37 @@ namespace QuanLy_SoTietKiem.GUI
 
         private void TrangChu_Load(object sender, EventArgs e)
         {
-
+            if(taiKhoan.QuyenHan == "NhanVien")
+            {
+                mnu_QuanLyNhanSu.Visible = false; // Ẩn menu Quản lý nhân sự
+                mnu_LichSuHeThong.Visible = false; // Ẩn menu Nhật ký hệ thống
+                mnu_ThongKeBaoCao.Visible = false; // Ẩn menu Thống kê báo cáo
+            }
         }
 
         private void mnu_RutTien_Click(object sender, EventArgs e)
         {
             OpenChildForm(new GUI.GiaoDich_RutTien(taiKhoan));
+        }
+
+        private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GUI.HuongDan());
+        }
+
+        private void mnu_ThongKe_GDTheoNgay_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GUI.ThongKe_GiaoDich_TheoNgay());
+        }
+
+        private void mnu_ThongKe_SoTheoChiNhanh_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GUI.ThongKe_So_TheoChiNhanh());
+        }
+
+        private void mnu_ThongKe_TongHopTienGui_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GUI.ThongKe_TongHop_TienGui());
         }
     }
 }

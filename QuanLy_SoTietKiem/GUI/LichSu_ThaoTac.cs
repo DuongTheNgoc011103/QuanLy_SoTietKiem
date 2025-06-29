@@ -255,5 +255,24 @@ namespace QuanLy_SoTietKiem.GUI
             }
         }
 
+        private void dgvDS_NhatKy_ThaoTac_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvDS_NhatKy_ThaoTac.Rows.Count)
+            {
+                DataGridViewRow row = dgvDS_NhatKy_ThaoTac.Rows[e.RowIndex];
+
+                if (row.Cells["ThoiGian"]?.Value != null && DateTime.TryParse(row.Cells["ThoiGian"].Value.ToString(), out DateTime ngayThaoTac))
+                {
+                    dtpNgayThaoTac.Value = ngayThaoTac;
+                }
+                else
+                {
+                    dtpNgayThaoTac.Value = DateTime.Now;
+                }
+
+                txtThaoTac.Text = row.Cells["ThaoTac"]?.Value?.ToString();
+                txtDoiTuong.Text = row.Cells["DoiTuong"]?.Value?.ToString();
+            }
+        }
     }
 }

@@ -770,7 +770,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -940,7 +939,7 @@
         <DataSetName>DataSET_NhanVien</DataSetName>
         <Top>4.30953cm</Top>
         <Left>0.15169cm</Left>
-        <Height>2.17367cm</Height>
+        <Height>2.17366cm</Height>
         <Width>39.56619cm</Width>
         <ZIndex>4</ZIndex>
         <Style>

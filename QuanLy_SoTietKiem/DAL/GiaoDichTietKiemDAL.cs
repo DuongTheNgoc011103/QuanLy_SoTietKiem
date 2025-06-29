@@ -34,6 +34,7 @@ namespace QuanLy_SoTietKiem.DAL
                     LaiSuatApDung = row["LaiSuatApDung"] is DBNull ? (float?)null : Convert.ToSingle(row["LaiSuatApDung"]),
                     GhiChu = row["GhiChu"].ToString(),
                     MaNV = row["MaNV"] is DBNull ? (int?)null : Convert.ToInt32(row["MaNV"]),
+                    HoTen_NV = row["HoTen"].ToString(), // Sửa thành HoTen_NV để rõ ràng
                     HoTen = row["HoTen"].ToString()
                 };
                 giaoDichList.Add(giaoDich);
@@ -225,6 +226,51 @@ namespace QuanLy_SoTietKiem.DAL
                 };
             }
             return reportData;
+        }
+
+        // Giao dịch theo ngày Report
+        public static List<GiaoDichTheoNgayReportDTO> GetGiaoDichTheoNgay(DateTime tuNgay, DateTime denNgay)
+        {
+            List<GiaoDichTheoNgayReportDTO> result = new List<GiaoDichTheoNgayReportDTO>();
+            string query = @"
+                SELECT
+                    GD.MaGD, GD.LoaiGiaoDich, GD.SoTien, GD.NgayGD, GD.LaiSuatApDung, GD.GhiChu,
+                    KH.HoTen AS HoTenKH, KH.CMND_CCCD,
+                    NV.HoTen AS TenNhanVien,
+                    STK.MaSo, LSTK.TenLoai AS TenLoaiSo
+                FROM GiaoDichTietKiem AS GD
+                JOIN SoTietKiem AS STK ON GD.MaSo = STK.MaSo
+                JOIN KhachHang AS KH ON STK.MaKH = KH.MaKH
+                LEFT JOIN NhanVien AS NV ON GD.MaNV = NV.MaNV -- LEFT JOIN vì MaNV có thể NULL
+                JOIN LoaiSoTietKiem AS LSTK ON STK.MaLoai = LSTK.MaLoai
+                WHERE GD.NgayGD >= @TuNgay AND GD.NgayGD < @DenNgayPlusOneDay -- Lấy đến hết ngày DenNgay
+                ORDER BY GD.NgayGD ASC";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@TuNgay", tuNgay.Date),
+                new SqlParameter("@DenNgayPlusOneDay", denNgay.Date.AddDays(1)) // Lấy đến hết ngày kết thúc
+            };
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query, parameters); // Sử dụng DatabaseHelper
+
+            foreach (DataRow row in dt.Rows)
+            {
+                result.Add(new GiaoDichTheoNgayReportDTO
+                {
+                    MaGD = Convert.ToInt32(row["MaGD"]),
+                    LoaiGiaoDich = row["LoaiGiaoDich"].ToString(),
+                    SoTien = Convert.ToDecimal(row["SoTien"]),
+                    NgayGD = Convert.ToDateTime(row["NgayGD"]),
+                    LaiSuatApDung = row["LaiSuatApDung"] is DBNull ? (float?)null : Convert.ToSingle(row["LaiSuatApDung"]),
+                    GhiChu = row["GhiChu"] is DBNull ? string.Empty : row["GhiChu"].ToString(),
+                    HoTenKH = row["HoTenKH"].ToString(),
+                    CMND_CCCD = row["CMND_CCCD"].ToString(),
+                    TenNhanVien = row["TenNhanVien"] is DBNull ? "N/A" : row["TenNhanVien"].ToString(),
+                    MaSo = Convert.ToInt32(row["MaSo"]),
+                    TenLoaiSo = row["TenLoaiSo"].ToString()
+                });
+            }
+            return result;
         }
     }
 }

@@ -41,11 +41,6 @@
             this.group_DS_NhatKy_ThaoTac = new System.Windows.Forms.GroupBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dgvDS_NhatKy_ThaoTac = new System.Windows.Forms.DataGridView();
-            this.MaLS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThaoTac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoiTuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTotalPages = new System.Windows.Forms.TextBox();
@@ -77,6 +72,20 @@
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.grp_Infor = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpNgayThaoTac = new System.Windows.Forms.DateTimePicker();
+            this.txtThaoTac = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDoiTuong = new System.Windows.Forms.TextBox();
+            this.MaLS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThaoTac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoiTuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -92,6 +101,9 @@
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel10.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.grp_Infor.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -136,7 +148,8 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.group_DS_NhatKy_ThaoTac);
+            this.panel5.Controls.Add(this.panel12);
+            this.panel5.Controls.Add(this.panel10);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(509, 0);
             this.panel5.Name = "panel5";
@@ -152,7 +165,7 @@
             this.group_DS_NhatKy_ThaoTac.ForeColor = System.Drawing.SystemColors.ControlText;
             this.group_DS_NhatKy_ThaoTac.Location = new System.Drawing.Point(0, 0);
             this.group_DS_NhatKy_ThaoTac.Name = "group_DS_NhatKy_ThaoTac";
-            this.group_DS_NhatKy_ThaoTac.Size = new System.Drawing.Size(1415, 807);
+            this.group_DS_NhatKy_ThaoTac.Size = new System.Drawing.Size(1415, 634);
             this.group_DS_NhatKy_ThaoTac.TabIndex = 3;
             this.group_DS_NhatKy_ThaoTac.TabStop = false;
             this.group_DS_NhatKy_ThaoTac.Text = "Danh Sách Nhật Ký Thao Tác";
@@ -163,7 +176,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 30);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1409, 713);
+            this.panel9.Size = new System.Drawing.Size(1409, 540);
             this.panel9.TabIndex = 3;
             // 
             // dgvDS_NhatKy_ThaoTac
@@ -211,49 +224,9 @@
             this.dgvDS_NhatKy_ThaoTac.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDS_NhatKy_ThaoTac.RowHeadersWidth = 51;
             this.dgvDS_NhatKy_ThaoTac.RowTemplate.Height = 30;
-            this.dgvDS_NhatKy_ThaoTac.Size = new System.Drawing.Size(1409, 713);
+            this.dgvDS_NhatKy_ThaoTac.Size = new System.Drawing.Size(1409, 540);
             this.dgvDS_NhatKy_ThaoTac.TabIndex = 0;
-            // 
-            // MaLS
-            // 
-            this.MaLS.DataPropertyName = "MaLS";
-            this.MaLS.FillWeight = 62.03209F;
-            this.MaLS.HeaderText = "Mã LS";
-            this.MaLS.MinimumWidth = 6;
-            this.MaLS.Name = "MaLS";
-            this.MaLS.Visible = false;
-            // 
-            // MaTaiKhoan
-            // 
-            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
-            this.MaTaiKhoan.FillWeight = 80F;
-            this.MaTaiKhoan.HeaderText = "MaTaiKhoan";
-            this.MaTaiKhoan.MinimumWidth = 6;
-            this.MaTaiKhoan.Name = "MaTaiKhoan";
-            this.MaTaiKhoan.Visible = false;
-            // 
-            // ThaoTac
-            // 
-            this.ThaoTac.DataPropertyName = "ThaoTac";
-            this.ThaoTac.HeaderText = "Thao Tác";
-            this.ThaoTac.MinimumWidth = 6;
-            this.ThaoTac.Name = "ThaoTac";
-            // 
-            // ThoiGian
-            // 
-            this.ThoiGian.DataPropertyName = "ThoiGian";
-            this.ThoiGian.FillWeight = 70F;
-            this.ThoiGian.HeaderText = "Thời Gian";
-            this.ThoiGian.MinimumWidth = 6;
-            this.ThoiGian.Name = "ThoiGian";
-            // 
-            // DoiTuong
-            // 
-            this.DoiTuong.DataPropertyName = "DoiTuong";
-            this.DoiTuong.FillWeight = 150F;
-            this.DoiTuong.HeaderText = "Đối Tượng";
-            this.DoiTuong.MinimumWidth = 6;
-            this.DoiTuong.Name = "DoiTuong";
+            this.dgvDS_NhatKy_ThaoTac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDS_NhatKy_ThaoTac_CellClick);
             // 
             // panel11
             // 
@@ -266,7 +239,7 @@
             this.panel11.Controls.Add(this.label1);
             this.panel11.Controls.Add(this.lblToTal);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(3, 743);
+            this.panel11.Location = new System.Drawing.Point(3, 570);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1409, 61);
             this.panel11.TabIndex = 1;
@@ -612,6 +585,138 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.grp_Infor);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1415, 173);
+            this.panel10.TabIndex = 4;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.group_DS_NhatKy_ThaoTac);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(0, 173);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1415, 634);
+            this.panel12.TabIndex = 5;
+            // 
+            // grp_Infor
+            // 
+            this.grp_Infor.Controls.Add(this.label5);
+            this.grp_Infor.Controls.Add(this.txtDoiTuong);
+            this.grp_Infor.Controls.Add(this.label4);
+            this.grp_Infor.Controls.Add(this.txtThaoTac);
+            this.grp_Infor.Controls.Add(this.label3);
+            this.grp_Infor.Controls.Add(this.dtpNgayThaoTac);
+            this.grp_Infor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grp_Infor.Font = new System.Drawing.Font("Tahoma", 13.2F);
+            this.grp_Infor.Location = new System.Drawing.Point(0, 0);
+            this.grp_Infor.Name = "grp_Infor";
+            this.grp_Infor.Size = new System.Drawing.Size(1415, 173);
+            this.grp_Infor.TabIndex = 0;
+            this.grp_Infor.TabStop = false;
+            this.grp_Infor.Text = "Thông Tin Thao Tác";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(595, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(168, 27);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Ngày Thao Tác:";
+            // 
+            // dtpNgayThaoTac
+            // 
+            this.dtpNgayThaoTac.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpNgayThaoTac.Enabled = false;
+            this.dtpNgayThaoTac.Location = new System.Drawing.Point(600, 83);
+            this.dtpNgayThaoTac.Name = "dtpNgayThaoTac";
+            this.dtpNgayThaoTac.Size = new System.Drawing.Size(489, 34);
+            this.dtpNgayThaoTac.TabIndex = 3;
+            // 
+            // txtThaoTac
+            // 
+            this.txtThaoTac.BackColor = System.Drawing.SystemColors.Info;
+            this.txtThaoTac.Location = new System.Drawing.Point(123, 42);
+            this.txtThaoTac.Multiline = true;
+            this.txtThaoTac.Name = "txtThaoTac";
+            this.txtThaoTac.ReadOnly = true;
+            this.txtThaoTac.Size = new System.Drawing.Size(449, 114);
+            this.txtThaoTac.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 27);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Thao Tác:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(968, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 27);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Đối Tượng:";
+            // 
+            // txtDoiTuong
+            // 
+            this.txtDoiTuong.BackColor = System.Drawing.SystemColors.Info;
+            this.txtDoiTuong.Location = new System.Drawing.Point(1103, 42);
+            this.txtDoiTuong.Multiline = true;
+            this.txtDoiTuong.Name = "txtDoiTuong";
+            this.txtDoiTuong.ReadOnly = true;
+            this.txtDoiTuong.Size = new System.Drawing.Size(397, 114);
+            this.txtDoiTuong.TabIndex = 9;
+            // 
+            // MaLS
+            // 
+            this.MaLS.DataPropertyName = "MaLS";
+            this.MaLS.FillWeight = 62.03209F;
+            this.MaLS.HeaderText = "Mã LS";
+            this.MaLS.MinimumWidth = 6;
+            this.MaLS.Name = "MaLS";
+            this.MaLS.Visible = false;
+            // 
+            // MaTaiKhoan
+            // 
+            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
+            this.MaTaiKhoan.FillWeight = 80F;
+            this.MaTaiKhoan.HeaderText = "MaTaiKhoan";
+            this.MaTaiKhoan.MinimumWidth = 6;
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            this.MaTaiKhoan.Visible = false;
+            // 
+            // ThaoTac
+            // 
+            this.ThaoTac.DataPropertyName = "ThaoTac";
+            this.ThaoTac.FillWeight = 150F;
+            this.ThaoTac.HeaderText = "Thao Tác";
+            this.ThaoTac.MinimumWidth = 6;
+            this.ThaoTac.Name = "ThaoTac";
+            // 
+            // ThoiGian
+            // 
+            this.ThoiGian.DataPropertyName = "ThoiGian";
+            this.ThoiGian.FillWeight = 70F;
+            this.ThoiGian.HeaderText = "Thời Gian";
+            this.ThoiGian.MinimumWidth = 6;
+            this.ThoiGian.Name = "ThoiGian";
+            // 
+            // DoiTuong
+            // 
+            this.DoiTuong.DataPropertyName = "DoiTuong";
+            this.DoiTuong.HeaderText = "Đối Tượng";
+            this.DoiTuong.MinimumWidth = 6;
+            this.DoiTuong.Name = "DoiTuong";
+            // 
             // LichSu_ThaoTac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -641,6 +746,10 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.grp_Infor.ResumeLayout(false);
+            this.grp_Infor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -686,6 +795,15 @@
         private System.Windows.Forms.RadioButton rad_RutTien;
         private System.Windows.Forms.RadioButton rad_ThoiGianGiamDan;
         private System.Windows.Forms.RadioButton rad_ThoiGianTangDan;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.GroupBox grp_Infor;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDoiTuong;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtThaoTac;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpNgayThaoTac;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLS;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThaoTac;
