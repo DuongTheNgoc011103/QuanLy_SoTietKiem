@@ -20,13 +20,15 @@ namespace QuanLy_SoTietKiem.Reports.GiaoDich_RutTien
         private int maGiaoDich;
         private decimal tongTienNhan;
         private decimal laiThucTe;
+        private decimal phiPhatRutTruocHan;
 
-        public HoaDon_RutTien(int maGiaoDich, decimal tongTienNhan, decimal laiThucTe)
+        public HoaDon_RutTien(int maGiaoDich, decimal tongTienNhan, decimal laiThucTe, decimal phiPhatRutTruocHan)
         {
             InitializeComponent();
             this.maGiaoDich = maGiaoDich;
             this.tongTienNhan = tongTienNhan;
             this.laiThucTe = laiThucTe;
+            this.phiPhatRutTruocHan = phiPhatRutTruocHan;
         }
 
         private void HoaDon_RutTien_Load(object sender, EventArgs e)
@@ -58,6 +60,7 @@ namespace QuanLy_SoTietKiem.Reports.GiaoDich_RutTien
             ReportParameter[] reportParams = new ReportParameter[]
             {
                 new ReportParameter("LaiThucTe", this.laiThucTe.ToString()),
+                new ReportParameter("PhiPhatRutTruocHan", this.phiPhatRutTruocHan.ToString()),
                 new ReportParameter("SoTienBangChu", soTienBangChu),
                 new ReportParameter("TongSoTienNhan", this.tongTienNhan.ToString())
             };

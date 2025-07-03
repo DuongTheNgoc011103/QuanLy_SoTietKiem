@@ -272,5 +272,48 @@ namespace QuanLy_SoTietKiem.DAL
             }
             return result;
         }
+
+        /// <summary>
+        /// Lấy dữ liệu tổng hợp tiền gửi (Mở sổ và Gửi tiền) trong một khoảng thời gian.
+        /// </summary>
+        /// <param name="startDate">Ngày bắt đầu.</param>
+        /// <param name="endDate">Ngày kết thúc.</param>
+        /// <returns>Danh sách các đối tượng TongHopTienGuiReportDTO.</returns>
+        public static List<TongHopTienGuiReportDTO> GetTongHopTienGui(DateTime startDate, DateTime endDate)
+        {
+            List<TongHopTienGuiReportDTO> result = new List<TongHopTienGuiReportDTO>();
+            string query = @"
+                SELECT
+                    CAST(NgayGD AS DATE) AS NgayGiaoDich,
+                    LoaiGiaoDich,
+                    SUM(SoTien) AS TongTien,
+                    COUNT(MaGD) AS SoLuongGiaoDich
+                    FROM GiaoDichTietKiem
+                    WHERE LoaiGiaoDich IN (N'Mở sổ tiết kiệm', N'Gửi tiền vào sổ tiết kiệm')
+                    AND NgayGD >= @StartDate AND NgayGD < DATEADD(day, 1, @EndDate) -- Lấy cả ngày cuối cùng
+                    GROUP BY CAST(NgayGD AS DATE), LoaiGiaoDich
+                    ORDER BY CAST(NgayGD AS DATE) ASC, LoaiGiaoDich ASC;
+            ";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@StartDate", SqlDbType.Date) { Value = startDate.Date },
+                new SqlParameter("@EndDate", SqlDbType.Date) { Value = endDate.Date }
+            };
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query, parameters);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                result.Add(new TongHopTienGuiReportDTO
+                {
+                    NgayGiaoDich = Convert.ToDateTime(row["NgayGiaoDich"]),
+                    LoaiGiaoDich = row["LoaiGiaoDich"].ToString(),
+                    TongTien = Convert.ToDecimal(row["TongTien"]),
+                    SoLuongGiaoDich = Convert.ToInt32(row["SoLuongGiaoDich"])
+                });
+            }
+            return result;
+        }
     }
 }

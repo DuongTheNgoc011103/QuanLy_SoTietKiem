@@ -67,8 +67,6 @@ namespace QuanLy_SoTietKiem.BLL
         // Cập nhật tài khoản
         public static bool SuaTaiKhoan(TaiKhoanDTO taiKhoan)
         {
-            // Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu
-            taiKhoan.MatKhau = MaHoa.MaHoaMD5(taiKhoan.MatKhau);
             return TaiKhoanDAL.SuaTaiKhoan(taiKhoan);
         }
 

@@ -150,5 +150,11 @@ namespace QuanLy_SoTietKiem.BLL
         {
             return SoTietKiemDAL.GetSoTheoChiNhanh();
         }
+
+        // Tính phí phạt rút trước hạn
+        public static decimal TinhPhiPhatRutTruocHan(decimal soTienRut, float phiPhat)
+        {
+            return SoTietKiemDAL.TinhPhiPhatRutTruocHan(soTienRut, phiPhat);
+        }
     }
 }

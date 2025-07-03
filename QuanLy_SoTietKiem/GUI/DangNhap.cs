@@ -54,34 +54,34 @@ namespace QuanLy_SoTietKiem
 
             TaiKhoanDTO taiKhoan = TaiKhoanBLL.DangNhapLayThongTin(tenDN, matKhau);
 
+            if (taiKhoan == null)
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi");
+                return;
+            }
+
             if (!taiKhoan.TrangThai)
             {
                 MessageBox.Show("Tài khoản đã bị khóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (taiKhoan != null)
+            // Lưu lịch sử đăng nhập
+            LichSuThaoTacDTO lichSu = new LichSuThaoTacDTO
             {
-                // Lưu lịch sử đăng nhập
-                LichSuThaoTacDTO lichSu = new LichSuThaoTacDTO
-                {
-                    MaTaiKhoan = taiKhoan.MaTaiKhoan,
-                    ThoiGian = DateTime.Now,
-                    ThaoTac = "Đăng nhập thành công",
-                    DoiTuong = "Tài khoản: " + taiKhoan.TenDangNhap
-                };
-                LichSuThaoTacBLL.ThemLichSuThaoTac(lichSu);
+                MaTaiKhoan = taiKhoan.MaTaiKhoan,
+                ThoiGian = DateTime.Now,
+                ThaoTac = "Đăng nhập thành công",
+                DoiTuong = "Tài khoản: " + taiKhoan.TenDangNhap
+            };
+            LichSuThaoTacBLL.ThemLichSuThaoTac(lichSu);
 
-                // Truyền thông tin sang form TrangChu
-                GUI.TrangChu trangChu = new GUI.TrangChu(taiKhoan);
-                trangChu.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi");
-            }
+            // Truyền thông tin sang form TrangChu
+            GUI.TrangChu trangChu = new GUI.TrangChu(taiKhoan);
+            trangChu.Show();
+            this.Hide();
         }
+
 
 
         private void lbQuenMK_Click(object sender, EventArgs e)

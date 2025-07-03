@@ -28,9 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKe_TongHop_TienGui));
             this.pnlTop_Title = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.grp_Filter = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.dtp_EndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtp_StartDate = new System.Windows.Forms.DateTimePicker();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.grp_Content = new System.Windows.Forms.GroupBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pnlTop_Title.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.grp_Filter.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.grp_Content.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop_Title
@@ -50,20 +67,140 @@
             this.lblTitle.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(717, 13);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(789, 40);
+            this.lblTitle.Size = new System.Drawing.Size(745, 40);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "THỐNG KÊ - BÁO CÁO: GIAO DỊCH THEO NGÀY";
+            this.lblTitle.Text = "THỐNG KÊ - BÁO CÁO: TỔNG HỢP TIỀN GỬI";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1924, 807);
+            this.panel1.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.grp_Filter);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(539, 807);
+            this.panel2.TabIndex = 0;
+            // 
+            // grp_Filter
+            // 
+            this.grp_Filter.Controls.Add(this.label2);
+            this.grp_Filter.Controls.Add(this.label1);
+            this.grp_Filter.Controls.Add(this.btnFilter);
+            this.grp_Filter.Controls.Add(this.dtp_EndDate);
+            this.grp_Filter.Controls.Add(this.dtp_StartDate);
+            this.grp_Filter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grp_Filter.Font = new System.Drawing.Font("Tahoma", 13.2F);
+            this.grp_Filter.Location = new System.Drawing.Point(0, 0);
+            this.grp_Filter.Name = "grp_Filter";
+            this.grp_Filter.Size = new System.Drawing.Size(539, 807);
+            this.grp_Filter.TabIndex = 1;
+            this.grp_Filter.TabStop = false;
+            this.grp_Filter.Text = "Thông tin";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 148);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 27);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Đến Ngày:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 27);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Từ Ngày:";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnFilter.ForeColor = System.Drawing.Color.White;
+            this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
+            this.btnFilter.Location = new System.Drawing.Point(148, 237);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(232, 45);
+            this.btnFilter.TabIndex = 2;
+            this.btnFilter.Text = "THỐNG KÊ";
+            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // dtp_EndDate
+            // 
+            this.dtp_EndDate.Location = new System.Drawing.Point(12, 179);
+            this.dtp_EndDate.Name = "dtp_EndDate";
+            this.dtp_EndDate.Size = new System.Drawing.Size(521, 34);
+            this.dtp_EndDate.TabIndex = 1;
+            // 
+            // dtp_StartDate
+            // 
+            this.dtp_StartDate.Location = new System.Drawing.Point(12, 82);
+            this.dtp_StartDate.Name = "dtp_StartDate";
+            this.dtp_StartDate.Size = new System.Drawing.Size(521, 34);
+            this.dtp_StartDate.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.grp_Content);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(539, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1385, 807);
+            this.panel3.TabIndex = 1;
+            // 
+            // grp_Content
+            // 
+            this.grp_Content.Controls.Add(this.reportViewer1);
+            this.grp_Content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grp_Content.Font = new System.Drawing.Font("Tahoma", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grp_Content.Location = new System.Drawing.Point(0, 0);
+            this.grp_Content.Name = "grp_Content";
+            this.grp_Content.Size = new System.Drawing.Size(1385, 807);
+            this.grp_Content.TabIndex = 1;
+            this.grp_Content.TabStop = false;
+            this.grp_Content.Text = "Kết Quả Thống Kê - Báo Cáo:";
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.DocumentMapWidth = 90;
+            this.reportViewer1.Location = new System.Drawing.Point(3, 30);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1379, 774);
+            this.reportViewer1.TabIndex = 0;
             // 
             // ThongKe_TongHop_TienGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 873);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTop_Title);
             this.Name = "ThongKe_TongHop_TienGui";
             this.Text = "THỐNG KÊ TỔNG HỢP TIỀN GỬI";
             this.pnlTop_Title.ResumeLayout(false);
             this.pnlTop_Title.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.grp_Filter.ResumeLayout(false);
+            this.grp_Filter.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.grp_Content.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -71,5 +208,16 @@
         #endregion
         private System.Windows.Forms.Panel pnlTop_Title;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox grp_Filter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.DateTimePicker dtp_EndDate;
+        private System.Windows.Forms.DateTimePicker dtp_StartDate;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox grp_Content;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

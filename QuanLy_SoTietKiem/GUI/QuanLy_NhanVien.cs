@@ -268,7 +268,7 @@ namespace QuanLy_SoTietKiem.GUI
                         MaTaiKhoan = taiKhoan.MaTaiKhoan,
                         ThoiGian = DateTime.Now,
                         ThaoTac = "Thêm nhân viên mới",
-                        DoiTuong = "Nhân viên: " + newNhanVien
+                        DoiTuong = "Nhân viên: " + txtHoTen.Text
                     };
                     LichSuThaoTacBLL.ThemLichSuThaoTac(lichSu);
 

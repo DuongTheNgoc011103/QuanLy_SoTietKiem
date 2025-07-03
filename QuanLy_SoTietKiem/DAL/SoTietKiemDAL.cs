@@ -522,5 +522,13 @@ namespace QuanLy_SoTietKiem.DAL
             }
             return result;
         }
+
+        // Tính phí phạt rút trước hạn
+        public static decimal TinhPhiPhatRutTruocHan(decimal soTienDungDeTinhPhi, float tyLePhiRutTruocHan)
+        {
+            // QUAN TRỌNG: Chia tỷ lệ phí cho 100.0f
+            decimal phiPhat = soTienDungDeTinhPhi * (decimal)(tyLePhiRutTruocHan / 100.0f);
+            return Math.Round(phiPhat, 2);
+        }
     }
 }

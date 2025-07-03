@@ -71,5 +71,11 @@ namespace QuanLy_SoTietKiem.BLL
         {
             return LoaiSoTietKiemDAL.GetLaiSuatByMaLoai(maLoai);
         }
+
+        // GetPhiRutTruocHanByMaLoai
+        public static float GetPhiRutTruocHanByMaLoai(int maLoai)
+        {
+            return LoaiSoTietKiemDAL.GetPhiRutTruocHanByMaLoai(maLoai);
+        }
     }
 }

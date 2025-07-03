@@ -1,4 +1,5 @@
 ﻿using QuanLy_SoTietKiem.BLL;
+using QuanLy_SoTietKiem.DAL;
 using QuanLy_SoTietKiem.DTO;
 using QuanLy_SoTietKiem.Utils;
 using System;
@@ -26,6 +27,7 @@ namespace QuanLy_SoTietKiem.GUI
         private decimal soTienRut = 0; // Biến để lưu số tiền rút
         private string ghiChu = ""; // Biến để lưu ghi chú rút tiền
         private bool isRutToanBo = false; // Biến để xác định có rút toàn bộ hay không
+        private float phiRutTruocHan = 0; // Biến để lưu phí rút trước hạn, nếu có
 
         int currentPage_STK = 1;
         int pageSize_STK = 5;
@@ -138,6 +140,18 @@ namespace QuanLy_SoTietKiem.GUI
             txtSoTienRut.Text = soTienRutValue.ToString(); // Hiển thị số tiền rút toàn bộ vào ô nhập tiền rút
             decimal soTienRutInput = Convert.ToDecimal(soTienRutValue);
 
+            decimal tienPhat = SoTietKiemBLL.TinhPhiPhatRutTruocHan(soTienRutValue, phiRutTruocHan);
+
+            if (dtp_NgayDaoHan.Value > DateTime.Now)
+            {
+                txtPhiPhat.Text = tienPhat.ToString();
+            }
+            else
+            {
+                txtPhiPhat.Text = "0";
+            }
+
+
             if (string.IsNullOrEmpty(txtMaSo.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng chọn sổ tiết kiệm trước khi rút tiền!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -163,7 +177,7 @@ namespace QuanLy_SoTietKiem.GUI
             SoTietKiemDTO soKetQua = SoTietKiemBLL.TinhLaiDuKien(maSo_TK, ngayRut, soTienRutInput);
             if (soKetQua != null)
             {
-                decimal tongTienNhan = soKetQua.SoTienGoc + soKetQua.LaiDuKien;
+                decimal tongTienNhan = (soKetQua.SoTienGoc + soKetQua.LaiDuKien) - tienPhat;
                 txtTongTienNhan.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00} ₫", tongTienNhan);
                 txtLaiThucTe.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00} ₫", soKetQua.LaiDuKien);
             }
@@ -228,6 +242,9 @@ namespace QuanLy_SoTietKiem.GUI
                 decimal tongTienNhanHienThi = 0;
                 decimal.TryParse(txtTongTienNhan.Text.Replace(" ₫", "").Trim(), NumberStyles.Currency, new CultureInfo("vi-VN"), out tongTienNhanHienThi);
 
+                decimal phiPhatRutTruocHan = 0;
+                decimal.TryParse(txtPhiPhat.Text, out phiPhatRutTruocHan);
+
                 GiaoDichTietKiemDTO giaoDich = new GiaoDichTietKiemDTO
                 {
                     MaSo = int.Parse(txtMaSo.Text),
@@ -277,7 +294,8 @@ namespace QuanLy_SoTietKiem.GUI
                     Reports.GiaoDich_RutTien.HoaDon_RutTien frmReport = new Reports.GiaoDich_RutTien.HoaDon_RutTien(
                         newMaGD,
                         tongTienNhanHienThi, // Tổng tiền nhận
-                        laiThucTeHienThi // Lãi thực tế
+                        laiThucTeHienThi, // Lãi thực tế
+                        phiPhatRutTruocHan // Phí rút trước hạn, nếu có
                     );
                     frmReport.ShowDialog();
                 }
@@ -317,6 +335,7 @@ namespace QuanLy_SoTietKiem.GUI
             btnRutMotPhan.Enabled = true;
             btnRutToanBo.Enabled = true;
             btnXemTruoc.Enabled = true; // Bật lại nút xem trước
+            txtPhiPhat.Text = "0"; // Reset phí rút trước hạn
         }
 
         private void dgvDS_SoTietKiem_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -399,6 +418,8 @@ namespace QuanLy_SoTietKiem.GUI
                     // Xóa hoặc đặt về 0 nếu không tìm thấy sổ hoặc lỗi
                     txtLaiSuatDuKien.Text = "0 ₫";
                 }
+
+                phiRutTruocHan = LoaiSoTietKiemBLL.GetPhiRutTruocHanByMaLoai(maLoai);
             }
         }
 
@@ -536,6 +557,17 @@ namespace QuanLy_SoTietKiem.GUI
             string soTienRutValue = txtSoTienRut.Text.Trim();
             decimal soTienRutInput = Convert.ToDecimal(soTienRutValue);
 
+            decimal tienPhat = SoTietKiemBLL.TinhPhiPhatRutTruocHan(soTienRutInput, phiRutTruocHan);
+           
+            if (dtp_NgayDaoHan.Value > DateTime.Now)
+            {
+                txtPhiPhat.Text = tienPhat.ToString();
+            }
+            else
+            {
+                txtPhiPhat.Text = "0";
+            }
+
 
             DateTime ngayDaoHan = dtp_NgayDaoHan.Value;
 
@@ -543,7 +575,8 @@ namespace QuanLy_SoTietKiem.GUI
 
             if (soKetQua != null)
             {
-                txtTongTienNhan.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00} ₫", soKetQua.TongSoTienCuoiKy);
+                decimal tongTienNhan = (soTienRutInput + soKetQua.LaiDuKien) - tienPhat;
+                txtTongTienNhan.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00} ₫", tongTienNhan);
                 txtLaiThucTe.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00} ₫", soKetQua.LaiDuKien);
             }
             else

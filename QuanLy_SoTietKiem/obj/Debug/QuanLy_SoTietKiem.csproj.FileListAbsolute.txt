@@ -86,3 +86,4 @@ D:\QuanLy_SoTietKiem\QuanLy_SoTietKiem\obj\Debug\QuanLy_SoTietKiem.Reports.GiaoD
 D:\QuanLy_SoTietKiem\QuanLy_SoTietKiem\obj\Debug\QuanLy_SoTietKiem.GUI.HuongDan.resources
 D:\QuanLy_SoTietKiem\QuanLy_SoTietKiem\obj\Debug\QuanLy_SoTietKiem.GUI.ThongKe_GiaoDich_TheoNgay.resources
 D:\QuanLy_SoTietKiem\QuanLy_SoTietKiem\obj\Debug\QuanLy_SoTietKiem.GUI.ThongKe_So_TheoChiNhanh.resources
+D:\QuanLy_SoTietKiem\QuanLy_SoTietKiem\obj\Debug\QuanLy_SoTietKiem.GUI.ThongKe_TongHop_TienGui.resources

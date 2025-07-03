@@ -328,42 +328,6 @@ namespace QuanLy_SoTietKiem.GUI
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra ô nhập mã tài khoản
-            if (string.IsNullOrEmpty(txtMaTK.Text))
-            {
-                MessageBox.Show("Vui lòng chọn tài khoản để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            // Xác nhận xóa tài khoản
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                int maTaiKhoan = Convert.ToInt32(txtMaTK.Text.Trim());
-                // Xóa tài khoản
-                if (TaiKhoanBLL.XoaTaiKhoan(maTaiKhoan))
-                {
-                    // Lưu lịch sử
-                    LichSuThaoTacDTO lichSu = new LichSuThaoTacDTO
-                    {
-                        MaTaiKhoan = taikhoan.MaTaiKhoan,
-                        ThoiGian = DateTime.Now,
-                        ThaoTac = "Xóa tài khoản",
-                        DoiTuong = "Tài khoản: " + txtTenDN.Text.Trim()
-                    };
-                    LichSuThaoTacBLL.ThemLichSuThaoTac(lichSu);
-
-                    MessageBox.Show("Xóa tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnReLoad_Click(sender, e); // Tải lại danh sách tài khoản và nhân viên
-                }
-                else
-                {
-                    MessageBox.Show("Xóa tài khoản thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void dgvDSTaiKhoan_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             DataGridViewRow row = dgvDSTaiKhoan.Rows[e.RowIndex];

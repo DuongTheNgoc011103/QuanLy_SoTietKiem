@@ -97,6 +97,7 @@
     <Compile Include="DTO\SoTheoChiNhanhReportDTO.cs" />
     <Compile Include="DTO\SoTietKiemDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
+    <Compile Include="DTO\TongHopTienGuiReportDTO.cs" />
     <Compile Include="GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,9 +362,11 @@
       <DependentUpon>SoTietKiemReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ThongKe_BaoCao\SoTheoChiNhanhReport.rdlc" />
+    <EmbeddedResource Include="Reports\ThongKe_BaoCao\TongHopTienGuiReport.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\QuanLy_SoTietKiem.DTO.GiaoDichTheoNgayReportDTO.datasource" />
     <None Include="Properties\DataSources\QuanLy_SoTietKiem.DTO.SoTheoChiNhanhReportDTO.datasource" />
+    <None Include="Properties\DataSources\QuanLy_SoTietKiem.DTO.TongHopTienGuiReportDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

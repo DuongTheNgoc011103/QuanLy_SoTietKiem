@@ -170,5 +170,21 @@ namespace QuanLy_SoTietKiem.DAL
             }
             return 0;
         }
+
+        // Get PhiRutTruocHan by MaLoai
+        public static float GetPhiRutTruocHanByMaLoai(int maLoai)
+        {
+            string query = "SELECT PhiRutTruocHan FROM LoaiSoTietKiem WHERE MaLoai = @MaLoai";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaLoai", maLoai)
+            };
+            DataTable dataTable = DatabaseHelper.ExecuteQuery(query, parameters);
+            if (dataTable.Rows.Count > 0 && dataTable.Rows[0]["PhiRutTruocHan"] != DBNull.Value)
+            {
+                return Convert.ToSingle(dataTable.Rows[0]["PhiRutTruocHan"]);
+            }
+            return 0;
+        }
     }
 }

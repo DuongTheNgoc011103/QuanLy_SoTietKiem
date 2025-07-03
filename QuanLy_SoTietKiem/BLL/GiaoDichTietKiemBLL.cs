@@ -67,5 +67,16 @@ namespace QuanLy_SoTietKiem.BLL
         {
             return GiaoDichTietKiemDAL.GetGiaoDichTheoNgay(tuNgay, denNgay);
         }
+
+        /// <summary>
+        /// Lấy dữ liệu tổng hợp tiền gửi trong một khoảng thời gian.
+        /// </summary>
+        /// <param name="startDate">Ngày bắt đầu.</param>
+        /// <param name="endDate">Ngày kết thúc.</param>
+        /// <returns>Danh sách các đối tượng TongHopTienGuiReportDTO.</returns>
+        public static List<TongHopTienGuiReportDTO> GetTongHopTienGui(DateTime startDate, DateTime endDate)
+        {
+            return GiaoDichTietKiemDAL.GetTongHopTienGui(startDate, endDate);
+        }
     }
 }
