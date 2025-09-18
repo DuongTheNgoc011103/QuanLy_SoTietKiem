@@ -1,13 +1,10 @@
 💰 Phần mềm Quản lý Sổ Tiết Kiệm – Ngân Hàng
 
-
-
-
-
-
-
-
-
+![Version](https://img.shields.io/badge/version-1.0-blue)
+![C#](https://img.shields.io/badge/C%23-WinForms-purple)
+![SQLServer](https://img.shields.io/badge/SQL%20Server-2012-red)
+![Reporting](https://img.shields.io/badge/Reporting-RDLC%2FCrystalReports-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 📖 Giới thiệu
 
